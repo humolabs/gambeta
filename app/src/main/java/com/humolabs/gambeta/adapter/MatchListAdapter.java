@@ -41,10 +41,10 @@ public class MatchListAdapter extends ArrayAdapter<Match> implements View.OnClic
 
         Match currentMatch = matches.get(position);
 
-        TextView direccion = (TextView) matchListView.findViewById(R.id.direccion);
+        TextView direccion = (TextView) matchListView.findViewById(R.id.address);
         direccion.setText(currentMatch.getAddress());
 
-        TextView fechaHora = (TextView) matchListView.findViewById(R.id.fechahora);
+        TextView fechaHora = (TextView) matchListView.findViewById(R.id.dateandhour);
         fechaHora.setText(currentMatch.getAddress());
         return matchListView;
     }

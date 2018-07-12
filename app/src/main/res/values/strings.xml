@@ -1,4 +1,5 @@
 <resources>
     <string name="action_settings">Settings</string>
     <string name="app_name">Gambeta</string>
+    <string name="field_description">Descripcion de la cancha</string>
 </resources>

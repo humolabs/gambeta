@@ -10,16 +10,10 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.humolabs.gambeta.adapter.MatchListAdapter;
-import com.humolabs.gambeta.model.Match;
 import com.humolabs.gambeta.service.MatchServiceImplementation;
-
-import java.util.ArrayList;
-
-import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Inject
     MatchServiceImplementation matchService;
 
     @Override
@@ -27,14 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar);
+        matchService = new MatchServiceImplementation();
+        matchService.save();
 
         //MatchList init
         ListView matchListView = findViewById(R.id.matchList);
-        MatchListAdapter matchsListAdapter = new MatchListAdapter(getApplicationContext(), matchService.getMatches());
-        matchListView.setAdapter(matchsListAdapter);
+        MatchListAdapter matchListAdapter = new MatchListAdapter(getApplicationContext(), matchService.getMatches());
+        matchListView.setAdapter(matchListAdapter);
 
         //Floating button init
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.btnAgregar);
+        FloatingActionButton fab = findViewById(R.id.btnAgregar);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

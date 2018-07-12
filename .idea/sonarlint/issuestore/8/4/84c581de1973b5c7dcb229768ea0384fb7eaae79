@@ -1,0 +1,4 @@
+
+Ksquid:S1481"*Remove this unused "match" local variable.(úÂíÿüÿÿÿÿ8ËÀœ¶È,
+Zsquid:S1854"9Remove this useless assignment to local variable "match".(úÂíÿüÿÿÿÿ8ËÀœ¶È,
+squid:S1319"oThe type of the "list" object should be an interface such as "List" rather than the implementation "ArrayList".(àıŠùÿÿÿÿ8ËÀœ¶È,

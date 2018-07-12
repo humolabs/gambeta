@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "955320825514",
-    "firebase_url": "https://fulbitobuilder.firebaseio.com",
-    "project_id": "fulbitobuilder",
-    "storage_bucket": "fulbitobuilder.appspot.com"
+    "project_number": "438149145549",
+    "firebase_url": "https://gambeta-humolabs.firebaseio.com",
+    "project_id": "gambeta-humolabs",
+    "storage_bucket": "gambeta-humolabs.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:955320825514:android:2bbb8a38560e68e3",
+        "mobilesdk_app_id": "1:438149145549:android:6c34b6e6c0b3bd03",
         "android_client_info": {
-          "package_name": "com.humolabs.armateuno"
+          "package_name": "com.humolabs.gambeta"
         }
       },
       "oauth_client": [
         {
-          "client_id": "955320825514-kp2g99d6oraem5cvtrk5s22mb1tdu8ba.apps.googleusercontent.com",
+          "client_id": "438149145549-9m8agjtlmpmfmc3p8l57n6ft9gms6mhb.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.humolabs.armateuno",
-            "certificate_hash": "a61255b892cf5cd01316c9f9a87104d6929b0967"
+            "package_name": "com.humolabs.gambeta",
+            "certificate_hash": "76da20c4864bb585618bafb4413d71d3b14f0a20"
           }
         },
         {
-          "client_id": "955320825514-s06bu00odpsdfj2udph8itiofht9ec47.apps.googleusercontent.com",
+          "client_id": "438149145549-c48vtvr16vq6cghl583al5sc5a6hu8t2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAFG-rrkdw4CNhhoGf9oZXqJgGIic9vsgk"
+          "current_key": "AIzaSyCuF217UX2yz_sOjwdcHjRL87oPE61GJwk"
         }
       ],
       "services": {
@@ -40,41 +40,10 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "955320825514-s06bu00odpsdfj2udph8itiofht9ec47.apps.googleusercontent.com",
+              "client_id": "438149145549-c48vtvr16vq6cghl583al5sc5a6hu8t2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:955320825514:android:6c34b6e6c0b3bd03",
-        "android_client_info": {
-          "package_name": "com.humolabs.gambeta"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "955320825514-s06bu00odpsdfj2udph8itiofht9ec47.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAFG-rrkdw4CNhhoGf9oZXqJgGIic9vsgk"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
