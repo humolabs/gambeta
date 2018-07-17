@@ -8,57 +8,63 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.humolabs.gambeta.model.FruitData;
 import com.humolabs.gambeta.model.Match;
-import com.humolabs.gambeta.model.Player;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static android.content.ContentValues.TAG;
 
 public class MatchServiceImplementation {
 
-    // Write a message to the database
-    private FirebaseDatabase database;
-    private DatabaseReference myRef;
+    private DatabaseReference matchesRef;
+    private DatabaseReference ref;
 
-    public void save(){
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("matches");
-        myRef.setValue(getMatches());
+    public MatchServiceImplementation(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        ref = database.getReference("gambetapp");
+        matchesRef = ref.child("matches");
     }
 
-    public void readData(){
-        // Read from the database
-        myRef.addValueEventListener(new ValueEventListener() {
+    public void saveMatch(Match match){
+        Log.d(TAG, "Value is: " + match);
+        matchesRef.push().setValue(match);
+    }
+
+    public void saveMatches(List<Match> matchList){
+        for(Match match : matchList){
+            Log.d(TAG, "Value is: " + match);
+            matchesRef.push().setValue(match);
+        }
+    }
+
+    public List<Match> getAll(){
+        final List<Match> matches = new ArrayList<>();
+        matchesRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                Log.d(TAG, "Value is: " + value);
+                for (DataSnapshot matchSnapshot: dataSnapshot.getChildren()) {
+                    Match match = matchSnapshot.getValue(Match.class);
+                    Log.d(TAG, "Value is: " + match);
+                    matches.add(match);
+                }
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
-                // Failed to read value
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
-    }
-
-    public ArrayList<Match> getMatches(){
-        ArrayList<Match> matches = new ArrayList<>();
-        matches.add(new Match("Algun lugar de moreno", "Mañana", "15:20", getPlayers()));
-        matches.add(new Match("Algun lugar de podesta", "Pasado", "17:20", getPlayers()));
         return matches;
     }
 
-    public List<Player> getPlayers(){
-        List<Player> players = new ArrayList<>();
-        players.add(new Player("Jose", "El gordo", 1234567890));
-        players.add(new Player("Enrique", "Comeviejas", 1234567890));
-        players.add(new Player("Nahuel", "Chino", 1234567890));
-        return players;
+    public void addRandomMatch() {
+        saveMatch(new Match(UUID.randomUUID().toString(),  UUID.randomUUID().toString(), UUID.randomUUID().toString(), FruitData.getPlayers()));
+    }
+
+    public void removeAll() {
+        matchesRef.setValue(null);
     }
 }

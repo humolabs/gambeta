@@ -1,19 +1,30 @@
 package com.humolabs.gambeta.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Match {
+public class Match implements Serializable{
 
     private String address;
     private String day;
     private String hour;
     private List<Player> players;
 
+    public Match (){
+        // Default constructor required for calls to DataSnapshot.getValue(Match.class)
+    }
+
     public Match(String address, String day, String hour, List<Player> players) {
         this.address = address;
         this.day = day;
         this.hour = hour;
         this.players = players;
+    }
+
+    public Match(String address, String day, String hour) {
+        this.address = address;
+        this.day = day;
+        this.hour = hour;
     }
 
     public String getAddress() {
@@ -46,5 +57,15 @@ public class Match {
 
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    @Override
+    public String toString() {
+        return "Match{" +
+                "address='" + address + '\'' +
+                ", day='" + day + '\'' +
+                ", hour='" + hour + '\'' +
+                ", players=" + players +
+                '}';
     }
 }

@@ -17,8 +17,6 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 [
 +app/src/main/res/layout/activity_listar.xml,9\6\96c580cf37f9176661ff137088d847fc172a7d90
-Z
-*app/src/main/res/layout/vista_contacto.xml,0\d\0d63840d5ec1bea44686f7f09b6139131dbb8ce9
 h
 8app/src/main/java/com/humolabs/gambeta/MainActivity.java,f\b\fb7f1f74d89b5956e006ccdb8dcfb313dbda4a70
 R
@@ -38,3 +36,11 @@ Dapp/src/main/java/com/humolabs/gambeta/adapter/MatchListAdapter.java,8\4\84c58
 Napp/src/main/java/com/humolabs/gambeta/service/MatchServiceImplementation.java,9\2\92890c2b87d959f25dde102b33c8b52b34c5c70d
 H
 app/google-services.json,f\d\fd8d34b142d02ec743a8efefefd2c097961666e9
+h
+8app/src/main/java/com/humolabs/gambeta/model/Player.java,e\8\e8122af057ec4311977d279483eef6d7b378ada4
+V
+&app/src/main/res/layout/match_view.xml,d\7\d79c965892322d306574befccdf9245c4afce444
+k
+;app/src/main/java/com/humolabs/gambeta/model/FruitData.java,a\3\a35860bb1e5bd45b7600f002b7210e4bef62a3d0
+v
+Fapp/src/main/java/com/humolabs/gambeta/viewmodel/MatchesViewModel.java,e\3\e31749031d0e06b5320f5e19e43f6a39e735d928

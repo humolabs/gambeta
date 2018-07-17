@@ -19,7 +19,7 @@ public class MatchListAdapter extends ArrayAdapter<Match> implements View.OnClic
     private List<Match> matches = new ArrayList<>();
     private Context context;
 
-    public MatchListAdapter(@NonNull Context context, ArrayList<Match> list) {
+    public MatchListAdapter(@NonNull Context context, List<Match> list) {
         super(context, 0, list);
         this.context = context;
         matches = list;
@@ -37,15 +37,15 @@ public class MatchListAdapter extends ArrayAdapter<Match> implements View.OnClic
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         View matchListView = convertView;
         if (convertView == null)
-            matchListView = LayoutInflater.from(context).inflate(R.layout.vista_contacto, parent, false);
+            matchListView = LayoutInflater.from(context).inflate(R.layout.match_view, parent, false);
 
         Match currentMatch = matches.get(position);
 
-        TextView direccion = (TextView) matchListView.findViewById(R.id.address);
+        TextView direccion = matchListView.findViewById(R.id.address);
         direccion.setText(currentMatch.getAddress());
 
-        TextView fechaHora = (TextView) matchListView.findViewById(R.id.dateandhour);
-        fechaHora.setText(currentMatch.getAddress());
+        TextView fechaHora = matchListView.findViewById(R.id.dateandhour);
+        fechaHora.setText(currentMatch.getHour());
         return matchListView;
     }
 }

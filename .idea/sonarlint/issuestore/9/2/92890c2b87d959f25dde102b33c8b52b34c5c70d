@@ -1,3 +1,2 @@
 
-‹squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¬À©D8©áÍüÈ,
-xsquid:S1450"WRemove the "database" field and declare it as a local variable in the relevant methods.(­“óûÿÿÿÿ8ä¸»üÈ,
+gsquid:S1192"KDefine a constant instead of duplicating this literal "Value is: " 3 times.(›Š³Ò8ş÷œ­Ê,

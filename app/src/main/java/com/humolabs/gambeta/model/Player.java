@@ -6,6 +6,10 @@ public class Player {
     private String nickName;
     private Integer contactNumber;
 
+    public Player(){
+        // Default constructor required for calls to DataSnapshot.getValue(Player.class)
+    }
+
     public Player(String name, String nickName, Integer contactNumber) {
         this.name = name;
         this.nickName = nickName;
@@ -34,5 +38,14 @@ public class Player {
 
     public void setContactNumber(Integer contactNumber) {
         this.contactNumber = contactNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", contactNumber=" + contactNumber +
+                '}';
     }
 }
