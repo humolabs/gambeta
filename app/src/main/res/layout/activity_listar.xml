@@ -26,13 +26,4 @@
         android:focusable="true"
         app:srcCompat="@android:drawable/ic_input_add" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btnRemoveAll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:clickable="true"
-        android:focusable="true"
-        app:srcCompat="@android:drawable/ic_delete" />
-
 </RelativeLayout>

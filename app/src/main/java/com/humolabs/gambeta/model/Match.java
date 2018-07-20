@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Match implements Serializable{
 
+    private String key;
     private String address;
     private String day;
     private String hour;
@@ -59,9 +60,20 @@ public class Match implements Serializable{
         this.players = players;
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+
+
     @Override
     public String toString() {
         return "Match{" +
+                "key='" + key + '\'' +
                 "address='" + address + '\'' +
                 ", day='" + day + '\'' +
                 ", hour='" + hour + '\'' +

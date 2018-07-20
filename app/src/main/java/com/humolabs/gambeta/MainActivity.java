@@ -1,11 +1,14 @@
 package com.humolabs.gambeta;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,8 +28,8 @@ import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
-    MatchListAdapter matchListAdapter;
     DatabaseReference refMatches;
+    ImageView removeItem;
 
     ListView matchesListView;
 
@@ -41,24 +44,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listar);
 
         matchesListView = findViewById(R.id.matchList);
+        removeItem = findViewById(R.id.matchDelete);
+
         matches = new ArrayList<>();
         //Floating button init
         FloatingActionButton fabAdd = findViewById(R.id.btnAdd);
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                refMatches.push().setValue(new Match(UUID.randomUUID().toString(), UUID.randomUUID().toString(), UUID.randomUUID().toString(), FruitData.getPlayers()));
-            }
-        });
-
-        FloatingActionButton fabRemove = findViewById(R.id.btnRemoveAll);
-        fabRemove.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(matches.isEmpty()){
-                    Toast.makeText(MainActivity.this, "You should add a match first", Toast.LENGTH_LONG).show();
-                }
-                refMatches.setValue(null);
+                refMatches.push().setValue(
+                        new Match(UUID.randomUUID().toString(), UUID.randomUUID().toString(), UUID.randomUUID().toString(), FruitData.getPlayers()));
             }
         });
     }
@@ -70,8 +65,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 matches.clear();
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    Match match = postSnapshot.getValue(Match.class);
+                for (DataSnapshot matchSnapshot : dataSnapshot.getChildren()) {
+                    Match match = matchSnapshot.getValue(Match.class);
+                    if (match != null) {
+                        match.setKey(matchSnapshot.getKey());
+                    }
                     matches.add(match);
                 }
                 MatchListAdapter matchListAdapter = new MatchListAdapter(MainActivity.this, matches);
