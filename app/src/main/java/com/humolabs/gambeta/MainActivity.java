@@ -1,49 +1,53 @@
 package com.humolabs.gambeta;
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.humolabs.gambeta.adapter.MatchListAdapter;
 import com.humolabs.gambeta.model.FruitData;
 import com.humolabs.gambeta.model.Match;
-import com.humolabs.gambeta.service.MatchServiceImplementation;
-import com.humolabs.gambeta.viewmodel.MatchesViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
-    MatchServiceImplementation matchService;
     MatchListAdapter matchListAdapter;
+    DatabaseReference refMatches;
+
+    ListView matchesListView;
+
+    List<Match> matches;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        refMatches = FirebaseDatabase.getInstance().getReference("matches");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar);
-        final ListView matchListView = findViewById(R.id.matchList);
 
-        //Init data
-        List<Match> matchList = FruitData.getMatches();
-        matchService = new MatchServiceImplementation();
-        matchService.saveMatches(matchList);
-
-        matchListView.setAdapter(new MatchListAdapter(getApplicationContext(), matchService.getAll()));
+        matchesListView = findViewById(R.id.matchList);
+        matches = new ArrayList<>();
         //Floating button init
         FloatingActionButton fabAdd = findViewById(R.id.btnAdd);
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                matchService.addRandomMatch();
+                refMatches.push().setValue(new Match(UUID.randomUUID().toString(), UUID.randomUUID().toString(), UUID.randomUUID().toString(), FruitData.getPlayers()));
             }
         });
 
@@ -51,18 +55,34 @@ public class MainActivity extends AppCompatActivity {
         fabRemove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                matchService.removeAll();
+                if(matches.isEmpty()){
+                    Toast.makeText(MainActivity.this, "You should add a match first", Toast.LENGTH_LONG).show();
+                }
+                refMatches.setValue(null);
             }
         });
+    }
 
-        MatchesViewModel viewModel = ViewModelProviders.of(this).get(MatchesViewModel.class);
-        viewModel.getMatches().observe(this, new Observer<List<Match>>() {
+    @Override
+    protected void onStart() {
+        super.onStart();
+        refMatches.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChanged(@Nullable List<Match> matches) {
-                matchListView.setAdapter(new MatchListAdapter(getApplicationContext(), matches));
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                matches.clear();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Match match = postSnapshot.getValue(Match.class);
+                    matches.add(match);
+                }
+                MatchListAdapter matchListAdapter = new MatchListAdapter(MainActivity.this, matches);
+                matchesListView.setAdapter(matchListAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
-
     }
 
     @Override
@@ -83,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

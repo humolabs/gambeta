@@ -16,7 +16,7 @@ import java.util.List;
 
 public class MatchListAdapter extends ArrayAdapter<Match> implements View.OnClickListener {
 
-    private List<Match> matches = new ArrayList<>();
+    private List<Match> matches;
     private Context context;
 
     public MatchListAdapter(@NonNull Context context, List<Match> list) {
