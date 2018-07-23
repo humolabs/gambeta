@@ -52,8 +52,9 @@ public class MainActivity extends AppCompatActivity {
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                refMatches.push().setValue(
-                        new Match(UUID.randomUUID().toString(), UUID.randomUUID().toString(), UUID.randomUUID().toString(), FruitData.getPlayers()));
+                Match match = new Match(UUID.randomUUID().toString(), UUID.randomUUID().toString(), UUID.randomUUID().toString(), FruitData.getPlayers());
+                refMatches.push().setValue(match);
+                Toast.makeText(MainActivity.this, "Created: " + match, Toast.LENGTH_LONG).show();
             }
         });
     }

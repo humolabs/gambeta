@@ -1,23 +1,26 @@
 package com.humolabs.gambeta.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.humolabs.gambeta.DisplayMatchActivity;
 import com.humolabs.gambeta.R;
 import com.humolabs.gambeta.model.Match;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MatchListAdapter extends ArrayAdapter<Match> {
+
+    public static final String MATCH_SERIALIZABLE_INTENT = "match";
 
     private List<Match> matches;
     private Context context;
@@ -32,18 +35,18 @@ public class MatchListAdapter extends ArrayAdapter<Match> {
 
     @NonNull
     @Override
-    public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, final View convertView, @NonNull ViewGroup parent) {
         View matchListView = convertView;
         if (convertView == null)
             matchListView = LayoutInflater.from(context).inflate(R.layout.match_view, parent, false);
 
         Match currentMatch = matches.get(position);
 
-        TextView direccion = matchListView.findViewById(R.id.address);
-        direccion.setText(currentMatch.getAddress());
+        TextView address = matchListView.findViewById(R.id.address);
+        address.setText(currentMatch.getAddress());
 
-        TextView fechaHora = matchListView.findViewById(R.id.dateandhour);
-        fechaHora.setText(currentMatch.getHour());
+        TextView dateAndHour = matchListView.findViewById(R.id.dateandhour);
+        dateAndHour.setText(currentMatch.getHour());
 
         matchListView.findViewById(R.id.matchDelete).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +55,17 @@ public class MatchListAdapter extends ArrayAdapter<Match> {
                 refMatches.child(currentMatch.getKey()).setValue(null);
                 matches.remove(position);
                 notifyDataSetChanged();
+                Toast.makeText(context, "Removed: " + currentMatch, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        matchListView.findViewById(R.id.matchView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Match currentMatch = matches.get(position);
+                Intent intent = new Intent(context, DisplayMatchActivity.class);
+                intent.putExtra("MATCH_SERIALIZABLE_INTENT", currentMatch);
+                context.startActivity(intent);
             }
         });
 

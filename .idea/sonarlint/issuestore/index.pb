@@ -32,8 +32,6 @@ g
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 t
 Dapp/src/main/java/com/humolabs/gambeta/adapter/MatchListAdapter.java,8\4\84c581de1973b5c7dcb229768ea0384fb7eaae79
-~
-Napp/src/main/java/com/humolabs/gambeta/service/MatchServiceImplementation.java,9\2\92890c2b87d959f25dde102b33c8b52b34c5c70d
 H
 app/google-services.json,f\d\fd8d34b142d02ec743a8efefefd2c097961666e9
 h
@@ -42,5 +40,3 @@ V
 &app/src/main/res/layout/match_view.xml,d\7\d79c965892322d306574befccdf9245c4afce444
 k
 ;app/src/main/java/com/humolabs/gambeta/model/FruitData.java,a\3\a35860bb1e5bd45b7600f002b7210e4bef62a3d0
-v
-Fapp/src/main/java/com/humolabs/gambeta/viewmodel/MatchesViewModel.java,e\3\e31749031d0e06b5320f5e19e43f6a39e735d928
