@@ -15,14 +15,25 @@
             android:layout_height="440dp"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_date_and_hour" />
+
             <EditText
                 android:id="@+id/input_field_date_hour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="@string/date_hour"
                 tools:ignore="LabelFor,TextFields" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_address" />
 
             <EditText
                 android:id="@+id/input_field_address"
@@ -30,7 +41,6 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="@string/address"
                 tools:ignore="LabelFor" />
         </LinearLayout>
 

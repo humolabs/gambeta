@@ -2,6 +2,7 @@ package com.humolabs.gambeta.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,9 +64,12 @@ public class MatchListAdapter extends ArrayAdapter<Match> {
             @Override
             public void onClick(View v) {
                 Match currentMatch = matches.get(position);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(MATCH_SERIALIZABLE_INTENT, currentMatch);
+                bundle.putBoolean("create", false);
                 Intent intent = new Intent(context, DisplayMatchActivity.class);
-                intent.putExtra("MATCH_SERIALIZABLE_INTENT", currentMatch);
-                context.startActivity(intent);
+                intent.putExtras(bundle);
+                v.getContext().startActivity(intent);
             }
         });
 
