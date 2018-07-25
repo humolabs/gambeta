@@ -4,4 +4,6 @@
     <string name="accept">Aceptar</string>
     <string name="txt_date_and_hour">Date and hour</string>
     <string name="txt_address">Address</string>
+    <string name="cancel">Cancelar</string>
+    <string name="edit">Editar</string>
 </resources>

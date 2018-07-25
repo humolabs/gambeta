@@ -66,7 +66,6 @@ public class MatchListAdapter extends ArrayAdapter<Match> {
                 Match currentMatch = matches.get(position);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(MATCH_SERIALIZABLE_INTENT, currentMatch);
-                bundle.putBoolean("create", false);
                 Intent intent = new Intent(context, DisplayMatchActivity.class);
                 intent.putExtras(bundle);
                 v.getContext().startActivity(intent);
