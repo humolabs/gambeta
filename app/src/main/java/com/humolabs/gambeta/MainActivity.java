@@ -1,16 +1,15 @@
 package com.humolabs.gambeta;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,15 +18,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.humolabs.gambeta.adapter.MatchListAdapter;
-import com.humolabs.gambeta.model.FruitData;
 import com.humolabs.gambeta.model.Match;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = MainActivity.class.getCanonicalName();
     DatabaseReference refMatches;
     ImageView removeItem;
 
@@ -52,9 +50,8 @@ public class MainActivity extends AppCompatActivity {
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Match match = new Match(UUID.randomUUID().toString(), UUID.randomUUID().toString(), UUID.randomUUID().toString(), FruitData.getPlayers());
-                refMatches.push().setValue(match);
-                Toast.makeText(MainActivity.this, "Created: " + match, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, CreateMatchActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -79,7 +76,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.e(TAG, databaseError.getDetails());
+                Toast.makeText(MainActivity.this, "Hubo un error guardando", Toast.LENGTH_LONG).show();
             }
         });
     }

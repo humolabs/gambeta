@@ -40,3 +40,11 @@ V
 &app/src/main/res/layout/match_view.xml,d\7\d79c965892322d306574befccdf9245c4afce444
 k
 ;app/src/main/java/com/humolabs/gambeta/model/FruitData.java,a\3\a35860bb1e5bd45b7600f002b7210e4bef62a3d0
+d
+4app/src/main/res/layout/match_create_update_view.xml,d\c\dca1c8d2de7242b047764c8aa087b8aec7bd242c
+o
+?app/src/main/java/com/humolabs/gambeta/CreateMatchActivity.java,d\4\d4d688adfa24709299f71e1d53a9c20fed7f2a24
+m
+=app/src/main/java/com/humolabs/gambeta/EditMatchActivity.java,b\d\bd60ad87d00af43300c9268f6772bb35148f6026
+h
+8app/src/main/java/com/humolabs/gambeta/AuthActivity.java,8\9\898f67e5cba552effa044b5a2070decf0a9697b3

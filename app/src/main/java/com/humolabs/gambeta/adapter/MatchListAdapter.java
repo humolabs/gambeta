@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.humolabs.gambeta.DisplayMatchActivity;
+import com.humolabs.gambeta.EditMatchActivity;
 import com.humolabs.gambeta.R;
 import com.humolabs.gambeta.model.Match;
 
@@ -66,7 +66,7 @@ public class MatchListAdapter extends ArrayAdapter<Match> {
                 Match currentMatch = matches.get(position);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(MATCH_SERIALIZABLE_INTENT, currentMatch);
-                Intent intent = new Intent(context, DisplayMatchActivity.class);
+                Intent intent = new Intent(context, EditMatchActivity.class);
                 intent.putExtras(bundle);
                 v.getContext().startActivity(intent);
             }
