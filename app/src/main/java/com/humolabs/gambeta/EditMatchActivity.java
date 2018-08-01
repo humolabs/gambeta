@@ -49,7 +49,7 @@ public class EditMatchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(EditMatchActivity.this, "Back", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(EditMatchActivity.this, MainActivity.class);
+                Intent intent = new Intent(EditMatchActivity.this, AuthActivity.class);
                 startActivity(intent);
             }
         });
@@ -71,7 +71,7 @@ public class EditMatchActivity extends AppCompatActivity {
                         match.setDay("lo terminaré o no");
                         refMatches.child(match.getKey()).setValue(match);
 
-                        Intent intent = new Intent(EditMatchActivity.this, MainActivity.class);
+                        Intent intent = new Intent(EditMatchActivity.this, AuthActivity.class);
                         startActivity(intent);
                     }
                 });

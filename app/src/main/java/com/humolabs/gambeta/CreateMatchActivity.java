@@ -29,7 +29,6 @@ public class CreateMatchActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.match_create_update_view);
-        Bundle bundle = getIntent().getExtras();
 
         inputAddress = findViewById(R.id.input_field_address);
         inputDateAndHour = findViewById(R.id.input_field_date_hour);
@@ -42,12 +41,12 @@ public class CreateMatchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String address = inputAddress.getText().toString();
-                String hour = inputDateAndHour.getText().toString().substring(0, 2);
-                String day = inputDateAndHour.getText().toString().substring(2, 4);
+                String hour = inputDateAndHour.getText().toString();
+                String day = "-" + inputDateAndHour.getText().toString();
                 Match match = new Match(address, day, hour, FruitData.getPlayers());
                 refMatches.push().setValue(match);
                 Toast.makeText(CreateMatchActivity.this, "Created: " + match, Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(CreateMatchActivity.this, MainActivity.class);
+                Intent intent = new Intent(CreateMatchActivity.this, AuthActivity.class);
                 startActivity(intent);
             }
         });
@@ -55,7 +54,7 @@ public class CreateMatchActivity extends AppCompatActivity {
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CreateMatchActivity.this, MainActivity.class);
+                Intent intent = new Intent(CreateMatchActivity.this, AuthActivity.class);
                 startActivity(intent);
             }
         });

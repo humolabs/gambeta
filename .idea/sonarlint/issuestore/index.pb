@@ -17,8 +17,6 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 [
 +app/src/main/res/layout/activity_listar.xml,9\6\96c580cf37f9176661ff137088d847fc172a7d90
-h
-8app/src/main/java/com/humolabs/gambeta/MainActivity.java,f\b\fb7f1f74d89b5956e006ccdb8dcfb313dbda4a70
 R
 "app/src/main/res/values/dimens.xml,c\3\c3c1811dec2dbad2deeafb9aad505ca9631da740
 S
@@ -48,3 +46,5 @@ m
 =app/src/main/java/com/humolabs/gambeta/EditMatchActivity.java,b\d\bd60ad87d00af43300c9268f6772bb35148f6026
 h
 8app/src/main/java/com/humolabs/gambeta/AuthActivity.java,8\9\898f67e5cba552effa044b5a2070decf0a9697b3
+Y
+)app/src/main/res/layout/auth_activity.xml,6\2\62bd6886e4d82cf5c816e1c3de0c264cafcee04e

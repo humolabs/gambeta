@@ -13,8 +13,8 @@
     <string name="unverified_profile">My Profile (Unverified)</string>
     <string name="settings">Settings</string>
     <string name="logout_menu_item">Sign out</string>
-    <string name="welcome_on_signin">Congratulations! you have successfully signed in.</string>
-    <string name="default_nouser_signin">No user signed in currently.</string>
+    <string name="welcome_user_signed">Congratulations! you have successfully signed in.</string>
+    <string name="welcome_no_user_signed">No user signed in currently.</string>
     <string name="login_failed">Log in cancelled!</string>
     <string name="login_success">Log in successful.</string>
     <string name="logout_success">Successfully logged out</string>
