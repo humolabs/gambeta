@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="gambeta_mix_green_dark">#102e1f</color>
+    <color name="gambeta_mix_green_high">#2f500a</color>
+    <color name="gambeta_mix_green_medium">#589613</color>
+    <color name="gambeta_mix_green_light">#95ff20</color>
+    <color name="gambeta_mix_pink">#e5004f</color>
 </resources>

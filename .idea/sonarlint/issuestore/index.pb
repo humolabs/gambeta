@@ -48,3 +48,9 @@ h
 8app/src/main/java/com/humolabs/gambeta/AuthActivity.java,8\9\898f67e5cba552effa044b5a2070decf0a9697b3
 Y
 )app/src/main/res/layout/auth_activity.xml,6\2\62bd6886e4d82cf5c816e1c3de0c264cafcee04e
+W
+'app/src/main/res/layout/player_view.xml,b\9\b9a3a1b4bdc5c5c8461b46ce1a9f739b30680777
+q
+Aapp/src/main/java/com/humolabs/gambeta/adapter/PlayerAdapter.java,f\1\f1e83d94eea9d5900ffa10b5d6ce3d601d124348
+]
+-app/src/main/res/layout/dialog_add_player.xml,c\e\ce77a6bb66bd37007a29d2055f980b6883d5b6b9

@@ -2,20 +2,20 @@ package com.humolabs.gambeta.model;
 
 import java.io.Serializable;
 
-public class Player implements Serializable{
+public class Player implements Serializable {
 
     private String name;
     private String nickName;
-    private Integer contactNumber;
+    private Integer contactPhone;
 
-    public Player(){
+    public Player() {
         // Default constructor required for calls to DataSnapshot.getValue(Player.class)
     }
 
-    public Player(String name, String nickName, Integer contactNumber) {
+    public Player(String name, String nickName, Integer contactPhone) {
         this.name = name;
         this.nickName = nickName;
-        this.contactNumber = contactNumber;
+        this.contactPhone = contactPhone;
     }
 
     public String getName() {
@@ -34,20 +34,11 @@ public class Player implements Serializable{
         this.nickName = nickName;
     }
 
-    public Integer getContactNumber() {
-        return contactNumber;
+    public Integer getContactPhone() {
+        return contactPhone;
     }
 
-    public void setContactNumber(Integer contactNumber) {
-        this.contactNumber = contactNumber;
-    }
-
-    @Override
-    public String toString() {
-        return "Player{" +
-                "name='" + name + '\'' +
-                ", nickName='" + nickName + '\'' +
-                ", contactNumber=" + contactNumber +
-                '}';
+    public void setContactPhone(Integer contactPhone) {
+        this.contactPhone = contactPhone;
     }
 }

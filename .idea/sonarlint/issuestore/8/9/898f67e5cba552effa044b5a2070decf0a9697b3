@@ -1,15 +1,11 @@
 
-Psquid:EmptyStatementUsageCheck"Remove this empty statement.(Åñ­õşÿÿÿÿ8Ê‰ÇºÎ,
-Psquid:EmptyStatementUsageCheck"Remove this empty statement.(Åñ­õşÿÿÿÿ8Ê‰ÇºÎ,
-U"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(¬üÍ£8Ê‰ÇºÎ,
-Esquid:S1659")Declare "mItemLogout" on a separate line.(öÿÅö8Ê‰ÇºÎ,
-Nsquid:S1659"2Declare "mItemVerifiedProfile" on a separate line.(öÿÅö8Ê‰ÇºÎ,
-Csquid:S1659"'Declare "mItemHome" on a separate line.(öÿÅö8Ê‰ÇºÎ,
-Gsquid:S1659"+Declare "mItemSettings" on a separate line.(öÿÅö8Ê‰ÇºÎ,
-Psquid:S1659"4Declare "mItemUnverifiedProfile" on a separate line.(öÿÅö8Ê‰ÇºÎ,
-Isquid:S1659"-Declare "mCurrentProfile" on a separate line.(öÿÅö8Ê‰ÇºÎ,
-7squid:S3626"Remove this redundant jump.(ûÁİ…8Ê‰ÇºÎ,
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ùú—Í8Ê‰ÇºÎ,
-hsquid:CallToDeprecatedMethod";Remove this use of "setPrivacyPolicyUrl"; it is deprecated.(ÇÚÕ8Ê‰ÇºÎ,
-]squid:CallToDeprecatedMethod"1Remove this use of "setTosUrl"; it is deprecated.(ŞŒ™l8Ê‰ÇºÎ,
-jsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(ËĞÓ‡8Ê‰ÇºÎ,
+Psquid:EmptyStatementUsageCheck"Remove this empty statement.(Åñ­õşÿÿÿÿ8€¥×ºĞ,
+U"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(¬üÍ£8€¥×ºĞ,
+Esquid:S1659")Declare "mItemLogout" on a separate line.(öÿÅö8€¥×ºĞ,
+Nsquid:S1659"2Declare "mItemVerifiedProfile" on a separate line.(öÿÅö8€¥×ºĞ,
+Csquid:S1659"'Declare "mItemHome" on a separate line.(öÿÅö8€¥×ºĞ,
+Gsquid:S1659"+Declare "mItemSettings" on a separate line.(öÿÅö8€¥×ºĞ,
+Psquid:S1659"4Declare "mItemUnverifiedProfile" on a separate line.(öÿÅö8€¥×ºĞ,
+Isquid:S1659"-Declare "mCurrentProfile" on a separate line.(öÿÅö8€¥×ºĞ,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ùú—Í8€¥×ºĞ,
+jsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(ËĞÓ‡8€¥×ºĞ,

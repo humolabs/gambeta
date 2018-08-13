@@ -21,4 +21,9 @@
     <string name="logout_failed">Failed to log out</string>
     <string name="login_unknown_Error">Unknown error while logging in. Please Try again</string>
     <string name="no_connectivity">There is no internet connection. Please try again</string>
+    <string name="player_nick_name">Apodo</string>
+    <string name="player_name">Nombre: </string>
+    <string name="player_contact_number">Numero: </string>
+    <string name="players">Players:</string>
+    <string name="addPlayer">Agregar jugador</string>
 </resources>
