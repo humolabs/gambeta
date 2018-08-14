@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -86,25 +87,36 @@ public class CreateMatchActivity extends AppCompatActivity {
         addPlayer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder alert = new AlertDialog.Builder(CreateMatchActivity.this);
-                alert.setTitle("Agregar jugador");
-                alert.setView(R.layout.dialog_add_player);
-                Button accept = findViewById(R.id.btnDialogAccept);
-                accept.setOnClickListener(new View.OnClickListener() {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(CreateMatchActivity.this);
+
+                LayoutInflater inflater = getLayoutInflater();
+                View dialogView = inflater.inflate(R.layout.dialog_add_player, null);
+
+                // Set the custom layout as alert dialog view
+                builder.setView(dialogView);
+
+                // Get the custom alert dialog view widgets reference
+                Button btnAccept = dialogView.findViewById(R.id.btnDialogAccept);
+                Button btnCancel = dialogView.findViewById(R.id.btnDialogCancel);
+                // Create the alert dialog
+                final AlertDialog dialog = builder.create();
+
+                btnAccept.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(CreateMatchActivity.this, "accept", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CreateMatchActivity.this, "Aceptar", Toast.LENGTH_SHORT).show();
                     }
                 });
 
-                Button cancel = findViewById(R.id.btnDialogCancel);
-                cancel.setOnClickListener(new View.OnClickListener() {
+                btnCancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(CreateMatchActivity.this, "cancel", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                        Toast.makeText(CreateMatchActivity.this, "Cancel", Toast.LENGTH_SHORT).show();
                     }
                 });
-                alert.show();
+                dialog.show();
             }
         });
 
