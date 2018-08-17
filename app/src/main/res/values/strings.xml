@@ -26,4 +26,5 @@
     <string name="player_contact_number">Numero: </string>
     <string name="players">Players:</string>
     <string name="addPlayer">Agregar jugador</string>
+    <string name="add_from_contacts">Agregar desde libreta</string>
 </resources>

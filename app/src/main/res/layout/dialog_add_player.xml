@@ -16,7 +16,7 @@
             android:text="@string/player_nick_name" />
 
         <EditText
-            android:id="@+id/txtNickName"
+            android:id="@+id/inputNickName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.65"
@@ -36,7 +36,7 @@
             android:text="@string/player_name" />
 
         <EditText
-            android:id="@+id/txtName"
+            android:id="@+id/inputName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.65"
@@ -56,12 +56,24 @@
             android:text="@string/player_contact_number" />
 
         <EditText
-            android:id="@+id/txtContactNumber"
+            android:id="@+id/inputContactNumber"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.65"
             android:ems="10"
             android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnAddFromContacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_from_contacts" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -75,18 +87,18 @@
         android:paddingTop="5.0dip">
 
         <Button
-            android:id="@+id/btnDialogAccept"
-            android:layout_width="0.0dip"
-            android:layout_height="fill_parent"
-            android:layout_weight="1.0"
-            android:text="@string/accept" />
-
-        <Button
             android:id="@+id/btnDialogCancel"
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:text="@string/cancel" />
+
+        <Button
+            android:id="@+id/btnDialogAccept"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:text="@string/accept" />
 
     </LinearLayout>
 </LinearLayout>
